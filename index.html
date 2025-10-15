@@ -2,56 +2,76 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>MINES HACK (BLACK THEME)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MINES HACK (PREMIUM BLACK)</title>
 <style>
-:root { --box:60px; --gap:10px; }
+:root {
+  --box:60px;
+  --gap:10px;
+}
 
 /* Body */
 body{
   font-family:"Poppins",sans-serif;
   margin:0;
   padding:0;
-  background:#000; /* full black */
+  background:#000;
   display:flex;
   justify-content:center;
   color:#ffd700;
 }
 
 /* App container */
-.app{width:100%;max-width:420px;min-height:100vh;padding:15px;box-sizing:border-box;}
+.app{
+  width:100%;
+  max-width:420px;
+  min-height:100vh;
+  padding:15px;
+  box-sizing:border-box;
+}
 
 /* Card */
 .card{
-  background:#000; /* black background */
+  background:#000;
   border-radius:12px;
   padding:12px;
   margin-bottom:18px;
-  border:1px solid rgba(255,255,255,0.1);
+  border:1px solid #fff;
   display:flex;
   align-items:center;
-  box-shadow:0 0 10px rgba(255,255,255,0.05);
+  box-shadow:0 0 10px rgba(255,255,255,0.1);
 }
 .cardimg{width:30%} 
 .cardimg img{width:100%;border-radius:10px}
-.cardinfo{width:70%;padding-left:10px;font-weight:700;color:#ffd700}
+.cardinfo{
+  width:70%;
+  padding-left:10px;
+  font-weight:700;
+  color:#ffd700;
+  text-shadow:0 0 5px rgba(255,215,0,0.5);
+}
 
 /* Main box */
 .main-box{
-  background:#000; /* black */
+  background:#000;
   border-radius:12px;
   padding:15px;
   margin-bottom:20px;
+  border:1px solid #fff;
   box-shadow:0 0 10px rgba(255,255,255,0.1);
 }
 
 /* Selector */
-.selector{text-align:center;margin-bottom:10px; position:relative;}
+.selector{
+  text-align:center;
+  margin-bottom:10px;
+  position:relative;
+}
 .selector button{
   width:90%;
   padding:10px;
   border-radius:8px;
-  border:none;
+  border:1px solid #fff;
   background:linear-gradient(135deg,#003b83,#0063c7);
   color:#ffd700;
   font-weight:600;
@@ -64,8 +84,9 @@ body{
 .dropdown{
   display:none;
   position:absolute;
-  top:45px;
-  left:0;
+  top:50px;
+  left:50%;
+  transform:translateX(-50%);
   width:90%;
   background:rgba(0,0,0,0.95);
   border-radius:8px;
@@ -78,37 +99,45 @@ body{
   border-bottom:1px solid rgba(255,255,255,0.07);
   color:#ffd700;
   cursor:pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.3s;
 }
-.dropdown div:hover{background:rgba(255,255,255,0.05);}
+.dropdown div:hover{
+  background:rgba(255,255,255,0.05);
+  transform:translateX(5px);
+}
 
 /* Selected text */
-.selected-text{ text-align:center;margin:10px 0;color:#fff }
+.selected-text{ 
+  text-align:center;
+  margin:10px 0;
+  color:#fff;
+}
 
 /* Grid */
 .grid-container{
   display:grid;
-  grid-template-columns: repeat(5, var(--box));
-  grid-auto-rows: var(--box);
+  grid-template-columns: repeat(5, minmax(50px, var(--box)));
+  grid-auto-rows: minmax(50px, var(--box));
   gap:var(--gap);
   justify-content:center;
-  width:max-content;
+  width:100%;
   margin:18px auto;
 }
 .grid-item{
-  width:var(--box);
-  height:var(--box);
+  width:100%;
+  height:100%;
   background-image:url("grid.png");
   background-size:cover;
   background-position:center;
   border-radius:8px;
+  border:1px solid #fff;
   box-shadow: inset 0 0 6px rgba(255,255,255,0.03);
 }
 .grid-item.diamond{
   background-image:url("star.png");
   background-size:cover;
   background-position:center;
-  box-shadow:0 0 8px rgba(255,215,100,0.7); /* softer glow */
+  box-shadow:0 0 10px rgba(255,215,100,0.5);
 }
 
 /* Start button */
@@ -117,7 +146,7 @@ body{
   width:85%;
   padding:12px;
   border-radius:10px;
-  border:none;
+  border:1px solid #fff;
   background:linear-gradient(135deg,#0044cc,#007bff);
   color:#ffd700;
   font-weight:700;
@@ -125,13 +154,21 @@ body{
 }
 
 /* Bottom box */
-.bottom-box{ text-align:center; margin-top:14px; background:#000; border-radius:12px; padding:12px; box-shadow:0 0 10px rgba(255,255,255,0.05);}
+.bottom-box{
+  text-align:center;
+  margin-top:14px;
+  background:#000;
+  border-radius:12px;
+  padding:12px;
+  box-shadow:0 0 10px rgba(255,255,255,0.05);
+  border:1px solid #fff;
+}
 .bottom-box button{
   width:85%;
   padding:10px;
   margin:6px 0;
   border-radius:8px;
-  border:none;
+  border:1px solid #fff;
   background:linear-gradient(135deg,#003b83,#0063c7);
   color:#ffd700;
   font-weight:700;
@@ -139,12 +176,32 @@ body{
 }
 
 /* Popup */
-.popup-overlay{ display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); align-items:center; justify-content:center; }
-.popup-content{ background:#fff; padding:16px; border-radius:8px; color:#000; }
+.popup-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  align-items:center;
+  justify-content:center;
+}
+.popup-content{
+  background:#111;
+  padding:16px;
+  border-radius:8px;
+  color:#ffd700;
+  text-align:center;
+  box-shadow:0 0 10px rgba(255,215,0,0.3);
+  font-weight:600;
+}
 
-/* Blink */
-.blink{ animation: blinkAnim 1s infinite; }
-@keyframes blinkAnim{0%,100%{box-shadow:none;}50%{box-shadow:0 0 18px rgba(255,215,0,0.9);}}
+/* Blink animation */
+.blink{
+  animation: blinkAnim 1s infinite;
+}
+@keyframes blinkAnim{
+  0%,100%{box-shadow:none;}
+  50%{box-shadow:0 0 15px rgba(255,215,0,0.7);}
+}
 </style>
 </head>
 <body>
@@ -197,11 +254,27 @@ let selectedMines=null;
 const resultsMap={1:15,2:9,4:5,7:4,10:3,15:2};
 
 // create grid
-for(let i=0;i<25;i++){const d=document.createElement('div');d.className='grid-item';grid.appendChild(d);}
-function clearBoard(){[...grid.children].forEach(c=>c.classList.remove('diamond'));}
+for(let i=0;i<25;i++){
+  const d=document.createElement('div');
+  d.className='grid-item';
+  grid.appendChild(d);
+}
+
+function clearBoard(){
+  [...grid.children].forEach(c=>c.classList.remove('diamond'));
+}
 
 // blink helpers
-function blink(el){if(!el)return; el.classList.add('blink'); el.scrollIntoView({behavior:'smooth',block:'center'});}
+function blink(el, scroll=true){
+  if(!el) return;
+  el.classList.add('blink');
+  if(scroll){
+    const rect=el.getBoundingClientRect();
+    if(rect.top<0 || rect.bottom>window.innerHeight){
+      el.scrollIntoView({behavior:'smooth',block:'center'});
+    }
+  }
+}
 function stopBlink(el){if(!el)return; el.classList.remove('blink');}
 
 // Arrow button click
@@ -210,7 +283,16 @@ arrowBtn.addEventListener('click',()=>{
   clearBoard(); startBtn.textContent='START'; selectedMines=null; selectedText.textContent='';
   stopBlink(startBtn);
   sessionStorage.setItem('stepState','selectMines');
-  blink(arrowBtn);
+
+  // Blink dropdown items sequentially
+  let items=[...dropdown.children];
+  let i=0;
+  let interval=setInterval(()=>{
+    items.forEach(it=>it.classList.remove('blink'));
+    items[i].classList.add('blink');
+    i=(i+1)%items.length;
+    if(selectedMines) { clearInterval(interval); items.forEach(it=>it.classList.remove('blink')); }
+  },800);
 });
 
 // Dropdown select
@@ -220,7 +302,7 @@ dropdown.querySelectorAll('div').forEach(opt=>{
     selectedText.textContent=`Your selected mines: ${opt.textContent}`;
     dropdown.style.display='none';
     stopBlink(arrowBtn);
-    blink(startBtn);
+    blink(startBtn,false);
     sessionStorage.setItem('stepState','minesSelected');
   });
 });
