@@ -214,14 +214,25 @@ body {
   font-weight:600;
 }
 
-/* Blink + Zoom */
+/* Blink + Zoom (Optimized for recording) */
 .blink {
-  animation: blinkAnim 1s infinite ease-in-out;
+  animation: blinkAnim 1.8s infinite ease-in-out;
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
 }
 @keyframes blinkAnim {
-  0%,100% { box-shadow:none; transform:scale(1); }
-  50% { box-shadow:0 0 18px rgba(255,215,0,0.7); transform:scale(1.05); }
+  0%,100% {
+    box-shadow: 0 0 4px rgba(255,215,0,0.3);
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(255,215,0,0.6);
+    transform: scale(1.04);
+    filter: brightness(1.1);
+  }
 }
+
 </style>
 </head>
 <body>
