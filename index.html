@@ -11,7 +11,7 @@
 }
 
 /* Body */
-body{
+body {
   font-family:"Poppins",sans-serif;
   margin:0;
   padding:0;
@@ -22,7 +22,7 @@ body{
 }
 
 /* App container */
-.app{
+.app {
   width:100%;
   max-width:420px;
   min-height:100vh;
@@ -31,7 +31,7 @@ body{
 }
 
 /* Card */
-.card{
+.card {
   background:#000;
   border-radius:12px;
   padding:12px;
@@ -41,18 +41,18 @@ body{
   align-items:center;
   box-shadow:0 0 10px rgba(255,255,255,0.1);
 }
-.cardimg{width:30%} 
-.cardimg img{width:100%;border-radius:10px}
-.cardinfo{
+.cardimg {width:30%;}
+.cardimg img {width:100%;border-radius:10px;}
+.cardinfo {
   width:70%;
   padding-left:10px;
   font-weight:700;
   color:#ffd700;
-  text-shadow:0 0 5px rgba(255,215,0,0.5);
+  text-shadow:0 0 6px rgba(255,215,0,0.6);
 }
 
 /* Main box */
-.main-box{
+.main-box {
   background:#000;
   border-radius:12px;
   padding:15px;
@@ -62,26 +62,32 @@ body{
 }
 
 /* Selector */
-.selector{
+.selector {
   text-align:center;
   margin-bottom:10px;
   position:relative;
 }
-.selector button{
+.selector button {
   width:90%;
   padding:10px;
   border-radius:8px;
   border:1px solid #fff;
-  background:linear-gradient(135deg,#003b83,#0063c7);
+  background:linear-gradient(135deg,#0a1a40,#0c3ca0);
   color:#ffd700;
   font-weight:600;
   cursor:pointer;
   z-index:10;
   position:relative;
+  transition:all 0.3s ease;
+  box-shadow:0 0 10px rgba(255,255,255,0.15), inset 0 0 5px rgba(0,0,0,0.4);
+}
+.selector button:hover {
+  transform:scale(1.03);
+  box-shadow:0 0 15px rgba(255,215,0,0.4);
 }
 
-/* Dropdown front & style */
-.dropdown{
+/* Dropdown */
+.dropdown {
   display:none;
   position:absolute;
   top:50px;
@@ -94,27 +100,29 @@ body{
   box-shadow:0 4px 12px rgba(0,0,0,0.7);
   z-index:1000;
 }
-.dropdown div{
+.dropdown div {
   padding:10px;
-  border-bottom:1px solid rgba(255,255,255,0.07);
+  border:1px solid #fff;
+  margin:3px;
+  border-radius:6px;
   color:#ffd700;
   cursor:pointer;
   transition: background 0.2s, transform 0.3s;
 }
-.dropdown div:hover{
+.dropdown div:hover {
   background:rgba(255,255,255,0.05);
   transform:translateX(5px);
 }
 
 /* Selected text */
-.selected-text{ 
+.selected-text { 
   text-align:center;
   margin:10px 0;
   color:#fff;
 }
 
 /* Grid */
-.grid-container{
+.grid-container {
   display:grid;
   grid-template-columns: repeat(5, minmax(50px, var(--box)));
   grid-auto-rows: minmax(50px, var(--box));
@@ -123,7 +131,7 @@ body{
   width:100%;
   margin:18px auto;
 }
-.grid-item{
+.grid-item {
   width:100%;
   height:100%;
   background-image:url("grid.png");
@@ -133,7 +141,7 @@ body{
   border:1px solid #fff;
   box-shadow: inset 0 0 6px rgba(255,255,255,0.03);
 }
-.grid-item.diamond{
+.grid-item.diamond {
   background-image:url("star.png");
   background-size:cover;
   background-position:center;
@@ -141,20 +149,26 @@ body{
 }
 
 /* Start button */
-.start-control{text-align:center; margin-top:6px}
-.start-control button{
+.start-control {text-align:center; margin-top:6px;}
+.start-control button {
   width:85%;
   padding:12px;
   border-radius:10px;
   border:1px solid #fff;
-  background:linear-gradient(135deg,#0044cc,#007bff);
+  background:linear-gradient(135deg,#002b88,#007bff);
   color:#ffd700;
   font-weight:700;
   cursor:pointer;
+  transition:all 0.3s ease;
+  box-shadow:0 0 10px rgba(255,255,255,0.15), inset 0 0 5px rgba(0,0,0,0.4);
+}
+.start-control button:hover {
+  transform:scale(1.04);
+  box-shadow:0 0 15px rgba(255,215,0,0.4);
 }
 
 /* Bottom box */
-.bottom-box{
+.bottom-box {
   text-align:center;
   margin-top:14px;
   background:#000;
@@ -163,20 +177,26 @@ body{
   box-shadow:0 0 10px rgba(255,255,255,0.05);
   border:1px solid #fff;
 }
-.bottom-box button{
+.bottom-box button {
   width:85%;
   padding:10px;
   margin:6px 0;
   border-radius:8px;
   border:1px solid #fff;
-  background:linear-gradient(135deg,#003b83,#0063c7);
+  background:linear-gradient(135deg,#0a1a40,#0c3ca0);
   color:#ffd700;
   font-weight:700;
   cursor:pointer;
+  transition:all 0.3s ease;
+  box-shadow:0 0 10px rgba(255,255,255,0.15), inset 0 0 5px rgba(0,0,0,0.4);
+}
+.bottom-box button:hover {
+  transform:scale(1.03);
+  box-shadow:0 0 15px rgba(255,215,0,0.4);
 }
 
 /* Popup */
-.popup-overlay{
+.popup-overlay {
   display:none;
   position:fixed;
   inset:0;
@@ -184,7 +204,7 @@ body{
   align-items:center;
   justify-content:center;
 }
-.popup-content{
+.popup-content {
   background:#111;
   padding:16px;
   border-radius:8px;
@@ -194,52 +214,56 @@ body{
   font-weight:600;
 }
 
-/* Blink animation */
-.blink{
-  animation: blinkAnim 1s infinite;
+/* Blink + Zoom */
+.blink {
+  animation: blinkAnim 1s infinite ease-in-out;
 }
-@keyframes blinkAnim{
-  0%,100%{box-shadow:none;}
-  50%{box-shadow:0 0 15px rgba(255,215,0,0.7);}
+@keyframes blinkAnim {
+  0%,100% { box-shadow:none; transform:scale(1); }
+  50% { box-shadow:0 0 18px rgba(255,215,0,0.7); transform:scale(1.05); }
 }
 </style>
 </head>
 <body>
 <div class="app">
-<div class="card">
-<div class="cardimg"><img src="logo.png" alt="logo"></div>
-<div class="cardinfo">MINES HACK 💎<br>USE 4 ALL PLATFORM 🎮<br>USE 4 ALL COUNTRY 🌐</div>
+  <div class="card">
+    <div class="cardimg"><img src="logo.png" alt="logo"></div>
+    <div class="cardinfo">MINES HACK 💎<br>USE 4 ALL PLATFORM 🎮<br>USE 4 ALL COUNTRY 🌐</div>
+  </div>
+
+  <div class="main-box">
+    <div class="selector">
+      <button id="arrowBtn">▼ Select your mines 💣</button>
+      <div class="dropdown" id="dropdown">
+        <div data-value="1">1💣</div>
+        <div data-value="2">2💣</div>
+        <div data-value="3">3💣</div>
+        <div data-value="4">4💣</div>
+        <div data-value="5">5💣</div>
+        <div data-value="6">6💣</div>
+        <div data-value="10">10💣</div>
+        <div data-value="12">12💣</div>
+        <div data-value="15">15💣</div>
+      </div>
+    </div>
+    <div class="selected-text" id="selectedText"></div>
+
+    <div class="grid-container" id="grid"></div>
+    <div class="start-control">
+      <button id="startBtn">START</button>
+    </div>
+  </div>
+
+  <div class="bottom-box">
+    <button onclick="window.open('https://t.me/+gpt7bMQia4kyMzJl','_blank')">TELEGRAM</button>
+    <button onclick="window.open('https://linkopen19.github.io/BestGameLink/','_blank')">BEST GAME</button>
+    <button id="howToUseBtn" onclick="window.location.href='howtouse.html'">HOW TO USE</button>
+  </div>
 </div>
 
-<div class="main-box">
-<div class="selector">
-<button id="arrowBtn">▼ Select your mines</button>
-<div class="dropdown" id="dropdown">
-<div data-value="1">1💣</div>
-<div data-value="2">2💣</div>
-<div data-value="4">4💣</div>
-<div data-value="7">7💣</div>
-<div data-value="10">10💣</div>
-<div data-value="15">15💣</div>
+<div class="popup-overlay" id="popup">
+  <div class="popup-content">Please select a mines 💣 first!</div>
 </div>
-</div>
-<div class="selected-text" id="selectedText"></div>
-
-<div class="grid-container" id="grid"></div>
-
-<div class="start-control">
-<button id="startBtn">START</button>
-</div>
-</div>
-
-<div class="bottom-box">
-<button onclick="window.open('https://t.me/+gpt7bMQia4kyMzJl','_blank')">TELEGRAM</button>
-<button onclick="window.open('https://linkopen19.github.io/BestGameLink/','_blank')">BEST GAME</button>
-<button id="howToUseBtn" onclick="window.location.href='howtouse.html'">HOW TO USE</button>
-</div>
-</div>
-
-<div class="popup-overlay" id="popup"><div class="popup-content">Please select a number first!</div></div>
 
 <script>
 const grid=document.getElementById('grid');
@@ -251,7 +275,7 @@ const popup=document.getElementById('popup');
 const howToUseBtn=document.getElementById('howToUseBtn');
 
 let selectedMines=null;
-const resultsMap={1:15,2:9,4:5,7:4,10:3,15:2};
+const resultsMap={1:20,2:15,3:10,4:8,5:7,6:6,10:4,12:4,15:3};
 
 // create grid
 for(let i=0;i<25;i++){
@@ -284,14 +308,14 @@ arrowBtn.addEventListener('click',()=>{
   stopBlink(startBtn);
   sessionStorage.setItem('stepState','selectMines');
 
-  // Blink dropdown items sequentially
+  // Sequential blink dropdown items
   let items=[...dropdown.children];
   let i=0;
   let interval=setInterval(()=>{
     items.forEach(it=>it.classList.remove('blink'));
     items[i].classList.add('blink');
     i=(i+1)%items.length;
-    if(selectedMines) { clearInterval(interval); items.forEach(it=>it.classList.remove('blink')); }
+    if(selectedMines){ clearInterval(interval); items.forEach(it=>it.classList.remove('blink')); }
   },800);
 });
 
@@ -310,24 +334,37 @@ dropdown.querySelectorAll('div').forEach(opt=>{
 // show result
 function showResult(){
   clearBoard();
-  if(!selectedMines){popup.style.display='flex'; setTimeout(()=>popup.style.display='none',1600); return;}
+  if(!selectedMines){
+    popup.style.display='flex';
+    setTimeout(()=>popup.style.display='none',1600);
+    return;
+  }
   const count=resultsMap[selectedMines]||0;
   const idx=[];
-  while(idx.length<count){const r=Math.floor(Math.random()*25); if(!idx.includes(r)) idx.push(r);}
+  while(idx.length<count){
+    const r=Math.floor(Math.random()*25);
+    if(!idx.includes(r)) idx.push(r);
+  }
   idx.forEach(i=>grid.children[i].classList.add('diamond'));
 }
 
 // Start button click
 startBtn.addEventListener('click',()=>{
   stopBlink(startBtn);
-  if(startBtn.textContent==='START'){ showResult(); if(selectedMines) startBtn.textContent='NEXT';}
-  else{ showResult(); }
+  if(startBtn.textContent==='START'){
+    showResult();
+    if(selectedMines) startBtn.textContent='NEXT';
+  } else {
+    showResult();
+  }
 });
 
 // Page load/back
 window.addEventListener('pageshow',(event)=>{
-  const perfNav = performance.getEntriesByType("navigation")[0];
-  if(!event.persisted && perfNav?.type==='reload'){ sessionStorage.setItem('stepState','howToUse'); }
+  const perfNav=performance.getEntriesByType("navigation")[0];
+  if(!event.persisted && perfNav?.type==='reload'){
+    sessionStorage.setItem('stepState','howToUse');
+  }
   const state=sessionStorage.getItem('stepState')||'howToUse';
   if(state==='howToUse'){blink(howToUseBtn);}
   else if(state==='selectMines'){stopBlink(howToUseBtn); blink(arrowBtn);}
